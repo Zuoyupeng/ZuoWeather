@@ -13,11 +13,24 @@ import kotlin.coroutines.suspendCoroutine
 object WeatherNetwork {
 
     private val placeService = ServiceCreator.create<PlaceService>()
+    private val weatherService = ServiceCreator.create<WeatherService>()
 
     /**
-     * 发起获取城市数据请求
+     * 获取城市数据请求
      */
     suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
+
+    /**
+     * 获取实时天气数据请求
+     */
+    suspend fun getRealtimeWeather(lng: String, lat: String) =
+        weatherService.getRealtimeWeather(lng, lat).await()
+
+    /**
+     * 获取未来天气数据请求
+     */
+    suspend fun getDailyWeather(lng: String, lat: String) =
+        weatherService.getDailyWeather(lng, lat).await()
 
     /**
      * 实现一个Call拓展方法，使用协程挂起函数，将返回值返回

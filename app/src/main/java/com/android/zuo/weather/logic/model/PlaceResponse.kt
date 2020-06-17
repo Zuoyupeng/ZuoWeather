@@ -2,7 +2,9 @@ package com.android.zuo.weather.logic.model
 
 import com.google.gson.annotations.SerializedName
 
-
+/**
+ * 全球城市数据模型
+ */
 data class PlaceResponse(val status: String, val places: List<Place>)
 
 data class Place(
