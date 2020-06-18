@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ZuoWeather</string>
+    <string name="app_name">小左天气</string>
     <string name="please_input_address">请输入地址</string>
     <string name="weather">预报</string>
     <string name="life_index">生活指数</string>
